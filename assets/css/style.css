@@ -10,9 +10,9 @@ img {
   height: 150px;
 }
 
-#for-gifs {
-  margin-top: 200px;
-  margin-right: 600px;
+#forGifsOne {
+  margin-top: 300px;
+  margin-right: 700px;
   float: right;
 }
 
@@ -28,5 +28,3 @@ button {
   color: white;
   margin: 3px;
 }
-
-#for-gifs {}
