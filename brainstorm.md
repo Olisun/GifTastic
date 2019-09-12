@@ -21,3 +21,7 @@
   3. data attributes for the buttons
   4. create a form and push to DOM.
      1. capture value from the form and push those values back into array
+
+## Remaining Bugs:
+  1. Can't pause gifs. Problem is how to target the src of the static gif s the animated gif.
+  2. The gifs return limit is only working for the first button clicked.

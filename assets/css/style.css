@@ -1,5 +1,32 @@
-#form-box {
-  float: right;
-  margin-right: 300px;
-  margin-top: -50px;
+body {
+  margin: auto;
 }
+
+.container {
+  position: fixed;
+}
+
+img {
+  height: 150px;
+}
+
+#for-gifs {
+  margin-top: 200px;
+  margin-right: 600px;
+  float: right;
+}
+
+button {
+  background-color: #ED1D24;
+  color: white;
+  margin: 3px;
+  overflow-wrap: break-word;
+}
+
+#new-topic-submitted {
+  background-color: #ED1D24;
+  color: white;
+  margin: 3px;
+}
+
+#for-gifs {}
