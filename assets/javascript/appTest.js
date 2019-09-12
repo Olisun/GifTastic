@@ -39,15 +39,29 @@ function apiCall() {
       console.log(queryURL);
       console.log(response);
       var results = response.data;
+
+      // Creating a div to hold the movie
+
+
+      gifs.empty();
+
       for (var i = 0; i < results.length; i++) {
+        var forGifsTwo = $('<div class="gify">');
+        var forGifsTwo = $('<div>');
+        forGifsTwo.attr('class', 'gify');
+
         marvelImage = $('<img>');
-        var marvelDiv = $('<div>');
+        // var marvelDiv = $('<div>');
         var p = $('<p>').text('Rating: ' + results[i].rating);
 
         marvelImage.attr('src', results[i].images.fixed_height.url, 'data-still', 'data-animate', 'data-state');
-        marvelDiv.append(marvelImage);
-        marvelDiv.append(p);
-        gifs.prepend(marvelDiv);
+
+
+        forGifsTwo.append(marvelImage);
+        forGifsTwo.append(p);
+        gifs.prepend(forGifsTwo);
+
+
 
       }
     });
