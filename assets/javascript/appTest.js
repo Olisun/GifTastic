@@ -1,4 +1,4 @@
-var topics = ['Avengers', 'Eternals', 'Marvel Phase Four', 'Captain America', 'Black Panther'];
+var topics = ['Avengers', 'Eternals', 'Marvel Phase Four', 'Captain America', 'Black Panther', 'Dr. Strange'];
 
 var newTopicButton = $('#new-topic-submitted');
 var avengerButtons = $('#avenger-buttons');
@@ -25,6 +25,7 @@ newTopicButton.on('click', function(event) {
   var newAvengerTopic = $('#new-avenger-topic').val().trim();
   topics.push(newAvengerTopic);
   createButton();
+
 })
 
 function apiCall() {
@@ -54,6 +55,7 @@ function apiCall() {
         var marvelImage = $('<img>');
 
         var rating = $('<p>').text('Rating: ' + results[i].rating);
+        var title = $('<p>').text('Title: ' + results[i].title);
 
         marvelImage.attr('src', results[i].images.fixed_height.url);
         marvelImage.attr('data-animate', results[i].images.fixed_height.url);
@@ -63,6 +65,7 @@ function apiCall() {
 
         forGifsTwo.append(marvelImage);
         forGifsTwo.append(rating);
+        forGifsTwo.append(title);
         gifs.prepend(forGifsTwo);
       }
     });

@@ -1,4 +1,4 @@
-var topics = ['Avengers', 'Eternals', 'Marvel Phase Four', 'Captain America', 'Black Panther'];
+var topics = ['Avengers', 'Eternals', 'Marvel Phase Four', 'Captain America', 'Black Panther', 'Dr. Strange'];
 
 var newTopicButton = $('#new-topic-submitted');
 var avengerButtons = $('#avenger-buttons');
@@ -25,6 +25,7 @@ newTopicButton.on('click', function(event) {
   var newAvengerTopic = $('#new-avenger-topic').val().trim();
   topics.push(newAvengerTopic);
   createButton();
+
 })
 
 function apiCall() {
@@ -54,27 +55,24 @@ function apiCall() {
         var marvelImage = $('<img>');
 
         var rating = $('<p>').text('Rating: ' + results[i].rating);
+        var title = $('<p>').text('Title: ' + results[i].title);
 
-        marvelImage.attr('src', results[i].images.fixed_height.url, 'data-still', results[i].images.fixed_height_still.url, 'data-animate', results[i].images.fixed_height.url, 'data-state', 'still', 'class', 'gif');
-
-        // 'data-still=results[i].images.fixed_height_still.url', 'data-animate=results[i].images.fixed_height.url', 'data-state="still"', 'class="gif"'
-
-        // marvelImage.attr('src', results[i].images.fixed_height.url, 'data-still=results[i].images.fixed_height_still.url', 'data-animate=results[i].images.fixed_height.url', 'data-state="still"', 'class="gif"');
+        marvelImage.attr('src', results[i].images.fixed_height.url);
+        marvelImage.attr('data-animate', results[i].images.fixed_height.url);
+        marvelImage.attr('data-still', results[i].images.fixed_height_still.url);
+        marvelImage.attr('data-state', 'still');
+        marvelImage.addClass('gif')
 
         forGifsTwo.append(marvelImage);
         forGifsTwo.append(rating);
+        forGifsTwo.append(title);
         gifs.prepend(forGifsTwo);
-
-
-
       }
     });
 
 };
 
-$(document).on('click', $(".gif"), pause);
-
-function pause() {
+$(document).on('click', '.gif', function() {
   var state = $(this).attr("data-state");
   if (state === "still") {
     var animate = $(this).attr("data-animate");
@@ -84,4 +82,4 @@ function pause() {
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
-};
+});
