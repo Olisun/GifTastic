@@ -1,23 +1,32 @@
-var topics = ['Avengers', 'Eternals', 'Marvel Phase Four', 'Captain America', 'Black Panther', 'Dr. Strange'];
+// Array for button topics when the page loads.
+var topics = ['Avengers', 'Thanos', 'Marvel Phase Four', 'Captain America', 'Black Panther', 'Dr. Strange'];
 
+// Declaring global variables
 var newTopicButton = $('#new-topic-submitted');
 var avengerButtons = $('#avenger-buttons');
 var gifs = $('#forGifsOne');
 
-
 // This assigns the apiCall function below to all buttons with a class of 'avenger-button'.
 $(document).on('click', '.avenger-button', apiCall);
 
+// This is the function that creates the buttons from the array above. It loop through each item in the array and applies the following below.
 function createButton() {
+  // The empty() prevents the buttons already on the page fro being created again when the user enters a button topic.
   avengerButtons.empty();
   for (var i = 0; i < topics.length; i++) {
+    // Creates a new button element
     var newAvengerButton = $('<button>');
+    // Adds a class of 'avenger-button'
     newAvengerButton.addClass('avenger-button');
+    // Adds an attriute that ties it to the API call data below.
     newAvengerButton.attr('data-marvel', topics[i]);
+    // This puts the topic title in the button
     newAvengerButton.text(topics[i]);
+    // This appends the buttons to the DOM
     avengerButtons.append(newAvengerButton);
-  }
-}
+  };
+};
+// Now we call the createButton function.
 createButton();
 
 newTopicButton.on('click', function(event) {
