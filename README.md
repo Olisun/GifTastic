@@ -24,3 +24,11 @@ We had to build an app that gets data from the GIPHY Developers API. The specs a
 ## Methodology:
 
 I went back and reviewd the class activies on Ajax to build this app. I also consulted the jQuery docs and w3schools website. I ran into some issues with the start-stop function but after discussing with my class-mates, I found out it was mostly a syntax issue. Loved this project!
+
+## Links to portfolio pages (This app has been added to my portfolio): 
+
+https://olisun.github.io/Bootstrap-Portfolio/portfolio.html
+
+https://olisun.github.io/Responsive-Portfolio/portfolio.html
+
+https://olisun.github.io/Basic-Portfolio-New/portfolio.html
