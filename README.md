@@ -65,10 +65,7 @@ $(document).on('click', '.gif', function() {
 });
 ```
 
-## Links to portfolio pages (This app has been added to my portfolio): 
+## Links to portfolio page: 
 
-https://olisun.github.io/Bootstrap-Portfolio/portfolio.html
+https://github.com/Olisun/Updated-Portfolio-Page
 
-https://olisun.github.io/Responsive-Portfolio/portfolio.html
-
-https://olisun.github.io/Basic-Portfolio-New/portfolio.html
